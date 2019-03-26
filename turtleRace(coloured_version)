@@ -1,0 +1,92 @@
+#!/usr/bin/python3.6
+from turtle import *
+import random
+t=Screen()
+t.bgcolor("black")
+t.title("TURTLE RACE")
+a=Pen()
+b=Pen()
+c=Pen()
+d=Pen()
+a.hideturtle()
+a.color("yellow")
+a.up()
+a.setpos(-140,140)
+def max(a,b):
+    if a>b:
+        return a
+    else:
+        return b
+for i in range(16):
+    a.write(i,align='center')
+    a.right(90)
+    a.forward(10)
+    for j in range(15):
+        a.down()
+        a.forward(10)
+        a.up()
+        a.forward(10)
+    a.backward(310)
+    a.left(90)
+    a.forward(20)
+a.speed(1)
+a.showturtle()
+a.color("red")
+a.shape("turtle")
+a.setpos(-140,80)
+a.right(360)
+a.down()
+b.up()
+b.speed(1)
+b.color("blue")
+b.shape("turtle")
+b.setpos(-140,20)
+b.left(360)
+b.down()
+c.up()
+c.speed(1)
+c.color("green")
+c.shape("turtle")
+c.setpos(-140,-40)
+c.right(360)
+c.down()
+d.up()
+d.speed(1)
+d.color("orange")
+d.shape("turtle")
+d.setpos(-140,-100)
+d.left(360)
+d.down()
+aa=0
+bb=0
+cc=0
+dd=0
+for k in range(100):
+    w=random.randint(1,5)
+    a.forward(w)
+    aa=aa+w
+    x=random.randint(1,5)
+    b.forward(x)
+    bb=bb+x
+    y=random.randint(1,5)
+    c.forward(y)
+    cc=cc+y
+    z=random.randint(1,5)
+    d.forward(z)
+    dd=dd+z
+k=max(max(aa,bb),max(cc,dd))
+t=Pen()
+t.hideturtle()
+t.up()
+t.setpos(200,200)
+t.down()
+t.color("white")
+t.width(5)
+if k==aa:
+    t.write("RED WINS")
+elif k==bb:
+    t.write("BLUE WINS")
+elif k==cc:
+    t.write("GREEN WINS")
+else:
+    t.write("ORANGE WINS")
